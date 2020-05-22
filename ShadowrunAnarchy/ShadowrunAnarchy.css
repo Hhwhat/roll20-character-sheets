@@ -301,7 +301,7 @@ div.sheet-npc-toggle {
 }
 
 .sheet-attribute h1 {
-	font-size: 1.5em;
+	font-size: 1.25em;
 }
 
 .sheet-attribute h1:hover {
@@ -400,11 +400,12 @@ div.sheet-meta input[name="attr_metatype"] {
 }
 
 .sheet-dispositionsrow h2 {
-	left: 37%;
+	left: 35%;
 	margin-bottom: 10px;
 	margin-top: -15px;
 	position: relative;
 	width: 30%;
+	top: -20px;
 }
 
 .sheet-dispositionsrow .sheet-textbox,
@@ -659,12 +660,12 @@ span.sheet-skillname:hover {
 
 .sheet-dispositionsrow input[type="checkbox"],
 .sheet-dispositionsrow input[type="checkbox"] + span {
-	left: 61%;
-	top: -20px;
+	left: 62%;
+	top: -40px;
 }
 
 .sheet-dispositionsrow input[type="checkbox"] + span {
-	left: 58%;
+	left: 59%;
 }
 
 .sheet-cuerow input[type="checkbox"] {
@@ -865,7 +866,7 @@ span.sheet-skillname:hover {
 }
 
 .sheet-unarmedbox {
-	width: 29%;
+	width: 32%;
 	height: 45px;
 	position: relative;
 	top: -25px;
@@ -878,7 +879,7 @@ span.sheet-skillname:hover {
 	margin-left: 5px;
 }
 
-.sheet-unarmedheader h4 {font-size: 1em;}
+.sheet-unarmedheader h4 {font-size: 0.8em;}
 
 .sheet-unarmeddamagebox {
 	width: 66%;
@@ -893,7 +894,11 @@ span.sheet-skillname:hover {
 
 .sheet-weaponlabels {
 	display: inline-block;
-	width: 21%;
+	width: 22%;
+}
+
+.sheet-weaponlables:nth-of-type(1) {
+	width: 25%;
 }
 
 .sheet-weaponsubtitlesbox label,
@@ -1445,9 +1450,13 @@ input.sheet-modifier-flag {
 	width: 25%;
 }
 
+.sheet-dispositionsrow .sheet-trapezoid {
+	top: -18px;
+}
+
 .sheet-trapezoid-white {
 	border-bottom-color: #fff;
-	top: 2px;
+	top: -17px;
 }
 
 .sheet-skillrow .sheet-trapezoid,
