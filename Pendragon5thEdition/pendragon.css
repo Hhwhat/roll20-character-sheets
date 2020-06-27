@@ -191,6 +191,9 @@ div.sheet-4autocolumn {
 div.sheet-col-3 {
   grid-template-columns: 1fr 3.5em 10%; }
 
+div.sheet-2columncheckbox {
+  grid-template-columns: 1fr 10%; }
+
 div.sheet-gold-left-border {
   border-left: 0.2em solid #ffd7001f;
   padding-left: 1%; }
