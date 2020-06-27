@@ -185,6 +185,9 @@ div.sheet-2autocolumn {
 div.sheet-3autocolumn {
   grid-template-columns: auto 1fr 10%; }
 
+div.sheet-4autocolumn {
+  grid-template-columns: auto 1fr auto 1fr; }
+
 div.sheet-col-3 {
   grid-template-columns: 1fr 3.5em 10%; }
 
@@ -344,6 +347,41 @@ div.sheet-character {
     grid-template-columns: auto 2fr auto 1fr; }
   div.sheet-character div.sheet-horse div.sheet-repeating-container div.sheet-row {
     grid-template-columns: 3fr auto 1fr; }
+  div.sheet-character input[name='attr_character_type'][value="magician"] ~ div.sheet-traits button[data-i18n='lustful'] {
+    text-decoration: underline; }
+  div.sheet-character input[name='attr_character_type'][value="magician"] ~ div.sheet-traits button[data-i18n='generous'] {
+    text-decoration: underline; }
+  div.sheet-character input[name='attr_character_type'][value="magician"] ~ div.sheet-traits button[data-i18n='honest'] {
+    text-decoration: underline; }
+  div.sheet-character input[name='attr_character_type'][value="magician"] ~ div.sheet-traits button[data-i18n='just'] {
+    text-decoration: underline; }
+  div.sheet-character input[name='attr_character_type'][value="magician"] ~ div.sheet-traits button[data-i18n='proud'] {
+    text-decoration: underline; }
+  div.sheet-character input[name='attr_character_type'][value="magician"] ~ div.sheet-traits button[data-i18n='spiritual'] {
+    text-decoration: underline; }
+  div.sheet-character input[name='attr_character_type'][value="magician"] ~ div.sheet-traits button[data-i18n='indulgent'] {
+    text-decoration: underline; }
+  div.sheet-character div.sheet-magical-talents h2 {
+    display: block;
+    width: 100%; }
+
+div.sheet-magician-calendar {
+  grid-column: 1 / 4; }
+  div.sheet-magician-calendar h2 {
+    display: block;
+    width: 100%; }
+  div.sheet-magician-calendar div.sheet-checkboxs {
+    display: inline;
+    padding: 2% 6%; }
+    div.sheet-magician-calendar div.sheet-checkboxs div.sheet-col {
+      display: inline-block;
+      width: 20px;
+      padding: 2% 1%; }
+      div.sheet-magician-calendar div.sheet-checkboxs div.sheet-col:nth-of-type(5n+5) {
+        margin-right: 5%; }
+
+div.sheet-equipment-mages textarea {
+  height: 100px; }
 
 /*  ENTOURAGE
     ============================= */
@@ -474,7 +512,6 @@ input[name='attr_character_type']:not([value="knight"]) ~ div.sheet-character di
 input[name='attr_character_type']:not([value="knight"]) ~ div.sheet-character div.sheet-col div.sheet-personality-traits .sheet-knight,
 input[name='attr_character_type']:not([value="knight"]) ~ div.sheet-character div.sheet-col div.sheet-personality-traits div.sheet-row .sheet-knight,
 input[name='attr_character_type']:not([value="knight"]) ~ div.sheet-character div.sheet-col div.sheet-equipment-carried .sheet-knight,
-input[name='attr_character_type']:not([value="knight"]) ~ div.sheet-character div.sheet-col div.sheet-skills .sheet-knight,
 input[name='attr_character_type']:not([value="knight"]) ~ div.sheet-character div.sheet-col div.sheet-squire .sheet-knight,
 input[name='attr_character_type']:not([value="knight"]) ~ div.sheet-character div.sheet-col .sheet-knight,
 input[name='attr_character_type']:not([value="knight"]) ~ div.sheet-character div.sheet-col div.sheet-combat-skills .sheet-knight,
@@ -486,7 +523,6 @@ input[name='attr_character_type']:not([value="knight"]) ~ div.sheet-holdings div
 input[name='attr_character_type']:not([value="knight"]) ~ div.sheet-holdings div.sheet-col div.sheet-personality-traits .sheet-knight,
 input[name='attr_character_type']:not([value="knight"]) ~ div.sheet-holdings div.sheet-col div.sheet-personality-traits div.sheet-row .sheet-knight,
 input[name='attr_character_type']:not([value="knight"]) ~ div.sheet-holdings div.sheet-col div.sheet-equipment-carried .sheet-knight,
-input[name='attr_character_type']:not([value="knight"]) ~ div.sheet-holdings div.sheet-col div.sheet-skills .sheet-knight,
 input[name='attr_character_type']:not([value="knight"]) ~ div.sheet-holdings div.sheet-col div.sheet-squire .sheet-knight,
 input[name='attr_character_type']:not([value="knight"]) ~ div.sheet-holdings div.sheet-col .sheet-knight,
 input[name='attr_character_type']:not([value="knight"]) ~ div.sheet-holdings div.sheet-col div.sheet-combat-skills .sheet-knight,
@@ -498,7 +534,6 @@ input[name='attr_character_type']:not([value="knight"]) ~ div.sheet-entourage di
 input[name='attr_character_type']:not([value="knight"]) ~ div.sheet-entourage div.sheet-row div.sheet-personality-traits .sheet-knight,
 input[name='attr_character_type']:not([value="knight"]) ~ div.sheet-entourage div.sheet-row div.sheet-personality-traits div.sheet-row .sheet-knight,
 input[name='attr_character_type']:not([value="knight"]) ~ div.sheet-entourage div.sheet-row div.sheet-equipment-carried .sheet-knight,
-input[name='attr_character_type']:not([value="knight"]) ~ div.sheet-entourage div.sheet-row div.sheet-skills .sheet-knight,
 input[name='attr_character_type']:not([value="knight"]) ~ div.sheet-entourage div.sheet-row div.sheet-squire .sheet-knight,
 input[name='attr_character_type']:not([value="knight"]) ~ div.sheet-entourage div.sheet-row .sheet-knight,
 input[name='attr_character_type']:not([value="knight"]) ~ div.sheet-entourage div.sheet-row div.sheet-combat-skills .sheet-knight,
@@ -509,7 +544,6 @@ input[name='attr_character_type']:not([value="woman"]) ~ div.sheet-character div
 input[name='attr_character_type']:not([value="woman"]) ~ div.sheet-character div.sheet-col div.sheet-personality-traits .sheet-woman,
 input[name='attr_character_type']:not([value="woman"]) ~ div.sheet-character div.sheet-col div.sheet-personality-traits div.sheet-row .sheet-woman,
 input[name='attr_character_type']:not([value="woman"]) ~ div.sheet-character div.sheet-col div.sheet-equipment-carried .sheet-woman,
-input[name='attr_character_type']:not([value="woman"]) ~ div.sheet-character div.sheet-col div.sheet-skills .sheet-woman,
 input[name='attr_character_type']:not([value="woman"]) ~ div.sheet-character div.sheet-col div.sheet-squire .sheet-woman,
 input[name='attr_character_type']:not([value="woman"]) ~ div.sheet-character div.sheet-col .sheet-woman,
 input[name='attr_character_type']:not([value="woman"]) ~ div.sheet-character div.sheet-col div.sheet-combat-skills .sheet-woman,
@@ -521,7 +555,6 @@ input[name='attr_character_type']:not([value="woman"]) ~ div.sheet-holdings div.
 input[name='attr_character_type']:not([value="woman"]) ~ div.sheet-holdings div.sheet-col div.sheet-personality-traits .sheet-woman,
 input[name='attr_character_type']:not([value="woman"]) ~ div.sheet-holdings div.sheet-col div.sheet-personality-traits div.sheet-row .sheet-woman,
 input[name='attr_character_type']:not([value="woman"]) ~ div.sheet-holdings div.sheet-col div.sheet-equipment-carried .sheet-woman,
-input[name='attr_character_type']:not([value="woman"]) ~ div.sheet-holdings div.sheet-col div.sheet-skills .sheet-woman,
 input[name='attr_character_type']:not([value="woman"]) ~ div.sheet-holdings div.sheet-col div.sheet-squire .sheet-woman,
 input[name='attr_character_type']:not([value="woman"]) ~ div.sheet-holdings div.sheet-col .sheet-woman,
 input[name='attr_character_type']:not([value="woman"]) ~ div.sheet-holdings div.sheet-col div.sheet-combat-skills .sheet-woman,
@@ -533,13 +566,50 @@ input[name='attr_character_type']:not([value="woman"]) ~ div.sheet-entourage div
 input[name='attr_character_type']:not([value="woman"]) ~ div.sheet-entourage div.sheet-row div.sheet-personality-traits .sheet-woman,
 input[name='attr_character_type']:not([value="woman"]) ~ div.sheet-entourage div.sheet-row div.sheet-personality-traits div.sheet-row .sheet-woman,
 input[name='attr_character_type']:not([value="woman"]) ~ div.sheet-entourage div.sheet-row div.sheet-equipment-carried .sheet-woman,
-input[name='attr_character_type']:not([value="woman"]) ~ div.sheet-entourage div.sheet-row div.sheet-skills .sheet-woman,
 input[name='attr_character_type']:not([value="woman"]) ~ div.sheet-entourage div.sheet-row div.sheet-squire .sheet-woman,
 input[name='attr_character_type']:not([value="woman"]) ~ div.sheet-entourage div.sheet-row .sheet-woman,
 input[name='attr_character_type']:not([value="woman"]) ~ div.sheet-entourage div.sheet-row div.sheet-combat-skills .sheet-woman,
 input[name='attr_character_type']:not([value="woman"]) ~ div.sheet-entourage div.sheet-row div.sheet-horse div.sheet-row .sheet-woman,
 input[name='attr_character_type']:not([value="woman"]) ~ div.sheet-entourage div.sheet-row div.sheeet-family-history div.sheet-row,
-input[name='attr_character_type']:not([value="woman"]) ~ div.sheet-entourage div.sheet-row div.sheet-col .sheet-woman, input[name='attr_settings_toggle']:not([value='settings']) ~ div.sheet-settings {
+input[name='attr_character_type']:not([value="woman"]) ~ div.sheet-entourage div.sheet-row div.sheet-col .sheet-woman, input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-character div.sheet-col div.sheet-row .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-character div.sheet-col div.sheet-personal-data div.sheet-row .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-character div.sheet-col div.sheet-personality-traits .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-character div.sheet-col div.sheet-personality-traits div.sheet-row .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-character div.sheet-col div.sheet-equipment-carried .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-character div.sheet-col div.sheet-squire .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-character div.sheet-col .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-character div.sheet-col div.sheet-combat-skills .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-character div.sheet-col div.sheet-horse div.sheet-row .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-character div.sheet-col div.sheeet-family-history div.sheet-row,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-character div.sheet-col div.sheet-col .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-holdings div.sheet-col div.sheet-row .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-holdings div.sheet-col div.sheet-personal-data div.sheet-row .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-holdings div.sheet-col div.sheet-personality-traits .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-holdings div.sheet-col div.sheet-personality-traits div.sheet-row .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-holdings div.sheet-col div.sheet-equipment-carried .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-holdings div.sheet-col div.sheet-squire .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-holdings div.sheet-col .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-holdings div.sheet-col div.sheet-combat-skills .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-holdings div.sheet-col div.sheet-horse div.sheet-row .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-holdings div.sheet-col div.sheeet-family-history div.sheet-row,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-holdings div.sheet-col div.sheet-col .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-entourage div.sheet-row div.sheet-row .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-entourage div.sheet-row div.sheet-personal-data div.sheet-row .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-entourage div.sheet-row div.sheet-personality-traits .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-entourage div.sheet-row div.sheet-personality-traits div.sheet-row .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-entourage div.sheet-row div.sheet-equipment-carried .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-entourage div.sheet-row div.sheet-squire .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-entourage div.sheet-row .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-entourage div.sheet-row div.sheet-combat-skills .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-entourage div.sheet-row div.sheet-horse div.sheet-row .sheet-magician,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-entourage div.sheet-row div.sheeet-family-history div.sheet-row,
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-entourage div.sheet-row div.sheet-col .sheet-magician, input[name='attr_character_type'][value="woman"] ~ div.sheet-character div.sheet-col div.sheet-skills .sheet-boating, input[name='attr_character_type'][value="woman"] ~ div.sheet-character div.sheet-col div.sheet-skills .sheet-hunting, input[name='attr_character_type'][value="woman"] ~ div.sheet-character div.sheet-col div.sheet-skills .sheet-celestrial-lore, input[name='attr_character_type'][value="woman"] ~ div.sheet-character div.sheet-col div.sheet-skills .sheet-clerk, input[name='attr_character_type'][value="woman"] ~ div.sheet-character div.sheet-col div.sheet-skills .sheet-geomantic-lore, input[name='attr_character_type'][value="knight"] ~ div.sheet-character div.sheet-col div.sheet-skills .sheet-chirurgery, input[name='attr_character_type'][value="knight"] ~ div.sheet-character div.sheet-col div.sheet-skills .sheet-industry, input[name='attr_character_type'][value="knight"] ~ div.sheet-character div.sheet-col div.sheet-skills .sheet-celestrial-lore, input[name='attr_character_type'][value="knight"] ~ div.sheet-character div.sheet-col div.sheet-skills .sheet-clerk, input[name='attr_character_type'][value="knight"] ~ div.sheet-character div.sheet-col div.sheet-skills .sheet-geomantic-lore, input[name='attr_character_type'][value="magician"] ~ div.sheet-character div.sheet-col div.sheet-skills .sheet-industry, input[name='attr_character_type'][value="magician"] ~ div.sheet-character div.sheet-col div.sheet-skills .sheet-read, input[name='attr_character_type'][value="magician"] ~ div.sheet-character div.sheet-glory,
+input[name='attr_character_type'][value="magician"] ~ div.sheet-character div.sheet-horse,
+input[name='attr_character_type'][value="magician"] ~ div.sheet-character div.sheet-knight-details,
+input[name='attr_character_type'][value="magician"] ~ div.sheet-character div.sheet-combat-skills div.sheet-battle,
+input[name='attr_character_type'][value="magician"] ~ div.sheet-character div.sheet-current-hit-points,
+input[name='attr_character_type'][value="magician"] ~ div.sheet-character div.sheet-equipment-carried,
+input[name='attr_character_type'][value="magician"] ~ div.sheet-character div.sheet-passions div.sheet-pre-populated-passions, input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-character div.sheet-magician, input[name='attr_settings_toggle']:not([value='settings']) ~ div.sheet-settings {
   display: none; }
 
 div.sheet-character, div.sheet-holdings, div.sheet-feast-record, div.sheet-gamemaster-characters, div.sheet-npc, div.sheet-entourage, div.sheet-settings {

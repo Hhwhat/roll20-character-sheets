@@ -22,6 +22,9 @@
         .col.2autocolumn.woman
           h2(data-i18n='daughter number')
           +textInput('daughter number')
+        .col.2autocolumn.magician
+          h2(data-i18n='tradition')
+          +textInput('tradition')
       .row.2autocolumn
         h2(data-i18n='homeland')
         +textInput('homeland')
@@ -45,9 +48,16 @@
       .row.2autocolumn.woman
         h2(data-i18n='Gentle Woman Bonus[*](total=80+)')
         +textInput('gentle woman bonus')
-      .row.2autocolumn
+      .row.2autocolumn.knight
         h2(data-i18n='Religious Bonus(traits all 16+)')
         +textInput('religious bonus')
+      .row.2autocolumn.woman
+        h2(data-i18n='Religious Bonus(traits all 16+)')
+        +textInput('religious bonus')
+      .row.2autocolumn.magician
+        h2(data-i18n='Tradition Bonus(traits all 16+)')
+        +textInput('tradition bonus')
+      input(name='attr_character_type' type='hidden' value='knight')
       each val, key in personalityTraits
         .row.traits
           .font-weight-bold
@@ -76,7 +86,7 @@
       .header
         h1(data-i18n='passions')
       each val in ['loyalty lord', 'love family', 'hospitality', 'honor']
-        .row
+        .row.pre-populated-passions
           +rollButton(val)
           +numberInput(val)
           +checkboxInput(`${val} check`)
@@ -87,6 +97,16 @@
             +numberInput('passion')
             +checkboxInput(`check`)
             +repeatingRollButton('passion')
+    .equipment-mages.magician
+      .header
+        h1(data-i18n='wealth & equipment')
+      .row.4autocolumn
+        h2(data-i18n='libra')
+        +textInput('libra')
+        h2(data-i18n='denarii')
+        +textInput('denarii')
+      .row
+        textarea(data-i18n-placeholder="wealth & equipment" name=`attr_wealth_equipment` placeholder="wealth & equipment")
     .equipment-carried
       .header
         h1(data-i18n='equipment carried')
@@ -114,6 +134,18 @@
         fieldset(class='repeating_equipment-carried')
           .row
               +textInput('equipment')
+    .magician-wonders.magician
+      .header
+        h1(data-i18n="Magician's Wonders")
+      .row
+        textarea(data-i18n-placeholder="Magician's Wonders" name=`attr_magician_wonders` placeholder="Magician's Wonders")
+    .sleep-owed.magician
+      .header
+        h1(data-i18n='sleep owed')
+      .row
+        +textInput('sleep owed')
+
+
   .col.gold-left-border
     .attributes
       .header
@@ -152,8 +184,8 @@
       .header
         h1(data-i18n='skills')
       each val in skills
-        - const classNotation = val === 'chirurgery' || val === 'industry' ? "woman" : val === 'boating' || val === 'hunting' ? "knight"  : "";
-        .row.col-3(class=`${val} ${classNotation}`)
+        - const className = val.includes(' ') ? val.replace(/ /g,"-") : val
+        .row.col-3(class=`${className}`)
             +rollButton(val)
             if val === 'play' || val === 'read' || val === 'religion'
               +textInput(`${val} name`)
@@ -166,7 +198,7 @@
               +numberInput('skill')
               +checkboxInput(`check`)
               +repeatingRollButton('skill')
-    .squire
+    .squire.knight.woman
       .header.knight
         h1(data-i18n='squire')
       .header.woman
@@ -205,6 +237,17 @@
         .col.2autocolumn
           h2(data-i18n='total')
           +numberInput('glory total')
+    .insight.magician
+      .header
+        h1(data-i18n='insight')
+      .row.2autocolumn
+        h2(data-i18n='insight')
+        +numberInput('insight')
+      .row.2autocolumn
+        h2(data-i18n='insight roll')
+        +numberInput('insight roll')
+      .row.text-center
+        span (insight/1000)
     .current-hit-points
         .header
           h1(data-i18n='current hit points')
@@ -220,7 +263,7 @@
       .header
         h1(data-i18n='combat skills')
       each val in ['battle', 'horsemanship']
-        .row.col-3
+        .row.col-3(class=val)
           +rollButton(val)
           +numberInput(val)
           +checkboxInput(`${val} check`)
@@ -232,13 +275,16 @@
           +rollButton(val)
           +numberInput(val)
           +checkboxInput(`${val} check`)
+      .row.2autocolumn.magician
+        h2.text-primary(data-i18n='armor value')
+        +numberInput('armor value')
       .repeating-container
         fieldset(class='repeating_combat-skills')
           .row
-              +textInput('name')
-              +numberInput('skill')
-              +checkboxInput(`check`)
-              +repeatingRollButton('skill')
+            +textInput('name')
+            +numberInput('skill')
+            +checkboxInput(`check`)
+            +repeatingRollButton('skill')
     .jouse-score.knight
       .header
         h1(data-i18n='jouse score')
@@ -313,4 +359,53 @@
           h1(data-i18n=val)
         .row
           textarea(data-i18n-placeholder=val name=`attr_${attrName}` placeholder=val)
+    .magical-attributes.magician
+      .header
+        h1(data-i18n='magical attributes')
+      each val in ['magic limit', 'personal life force', 'magic protection']
+        - const className = val.replace(/ /g, '-');
+        .row.2autocolumn(class=className)
+          h2(data-i18n=val)
+          +textInput(val)
+      .row
+        h2(data-i18n='natural talent bonus')
+      .row
+        +textInput('natural talent bonus')
+    .magical-talents.magician
+      each val in ['divination', 'enchantment', 'glamour', 'healing']
+        .row.text-center
+          h2(data-i18n=val)
+        .repeating-container
+          fieldset(class=`repeating_${val}`)
+            .row.2column
+              +textInput('name')
+              +checkboxInput(`check`)
+    .wondrous-items.magician
+      .header
+        h1(data-i18n='wondrous items')
+      each val in ['talismans', 'substances', 'artifacts']
+        .row.text-center
+          h2(data-i18n=val)
+        .row
+          textarea(data-i18n-placeholder=val name=`attr_${val}` placeholder=val)
 
+  .row.magician-calendar
+    .header.magician
+      h1(data-i18n="Magician's Calender")
+    .row.2column.magician
+      .col
+        .row.text-center
+          h2(data-i18n='Winter Weeks')
+        .row.checkboxs
+          - let winterWeeks = 0;
+          while winterWeeks < 26
+            .col
+              +checkboxInput(`winter week ${++winterWeeks}`)
+      .col
+        .row.text-center
+          h2(data-i18n='Summer Weeks')
+        .row.checkboxs
+          - let summerWeeks = 0;
+          while summerWeeks < 26
+            .col
+              +checkboxInput(`summer week ${++summerWeeks}`)

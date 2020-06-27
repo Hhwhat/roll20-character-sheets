@@ -44,7 +44,7 @@ input[name='attr_sheet_type'][value='feast'] ~ div.sheet-tabs select[name='attr_
     @extend %displaynone;
  }
 
-$types: 'knight', 'woman';
+$types: 'knight', 'woman', 'magician';
 @each $value in $types {
     input[name='attr_character_type']:not([value="#{$value}"]) ~ div.sheet-character div.sheet-col,
     input[name='attr_character_type']:not([value="#{$value}"]) ~ div.sheet-holdings div.sheet-col,
@@ -54,16 +54,59 @@ $types: 'knight', 'woman';
         & div.sheet-personality-traits .sheet-#{$value},
         & div.sheet-personality-traits div.sheet-row .sheet-#{$value},
         & div.sheet-equipment-carried .sheet-#{$value},
-        & div.sheet-skills .sheet-#{$value},
         & div.sheet-squire .sheet-#{$value},
         & .sheet-#{$value},
         & div.sheet-combat-skills .sheet-#{$value},
         & div.sheet-horse div.sheet-row .sheet-#{$value},
         & div.sheeet-family-history div.sheet-row,
-        & .sheet-#{$value},
         & div.sheet-col .sheet-#{$value} {
             @extend %displaynone;
         }  
+    }
+}
+
+$not_woman_skills: 'boating', 'hunting', 'celestrial-lore', 'clerk', 'geomantic-lore';
+@each $value in $not_woman_skills {
+    input[name='attr_character_type'][value="woman"] ~ div.sheet-character div.sheet-col {
+        & div.sheet-skills .sheet-#{$value} {
+            @extend %displaynone;
+        }
+    }
+}
+
+$not_man_skills: 'chirurgery', 'industry', 'celestrial-lore', 'clerk', 'geomantic-lore';
+@each $value in $not_man_skills {
+    input[name='attr_character_type'][value="knight"] ~ div.sheet-character div.sheet-col {
+        & div.sheet-skills .sheet-#{$value} {
+            @extend %displaynone;
+        }
+    }
+}
+
+$not_magician_skills: 'industry', 'read';
+@each $value in $not_magician_skills{
+    input[name='attr_character_type'][value="magician"] ~ div.sheet-character {
+        & div.sheet-col div.sheet-skills .sheet-#{$value} {
+            @extend %displaynone;
+        }
+    }
+}
+
+input[name='attr_character_type'][value="magician"] ~ div.sheet-character {
+    & div.sheet-glory,
+    & div.sheet-horse,
+    & div.sheet-knight-details,
+    & div.sheet-combat-skills div.sheet-battle,
+    & div.sheet-current-hit-points,
+    & div.sheet-equipment-carried,
+    & div.sheet-passions div.sheet-pre-populated-passions {
+        @extend %displaynone;
+    }
+}
+
+input[name='attr_character_type']:not([value="magician"]) ~ div.sheet-character {
+    & div.sheet-magician {
+        @extend %displaynone;
     }
 }
 

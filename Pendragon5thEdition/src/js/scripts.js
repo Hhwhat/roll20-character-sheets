@@ -4,15 +4,16 @@ const attributes = {
 	movement: ['strength', 'dexterity'],
 	hp: ['size', 'constitution'],
 	unconcious: ['total_hit_points'],
-	knights: ['old_knights', 'middle_aged_knights', 'young_knights']
+	knights: ['old_knights', 'middle_aged_knights', 'young_knights'],
+	character: ['knight', 'woman', 'magician']
 }
 
 const sheetSelect = eventinfo => {
 	const newValue = eventinfo.newValue;
 	let update = {}
 
-	update.sheet_type = newValue === 'knight' || newValue === 'woman' ? 'character' : newValue;
-	update.character_type = newValue === 'woman' ? 'woman' : 'knight';
+	update.sheet_type = attributes.character.includes(newValue) ? 'character' : newValue;
+	update.character_type = attributes.character.includes(newValue) ? newValue : 'knight';
 
 	setAttrs(update);	
 }
