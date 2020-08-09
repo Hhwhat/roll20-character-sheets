@@ -152,7 +152,6 @@
 		@extend %display-none;
 	}
 
-
 	input[name='attr_stats_toggle']:not([value='settings']) ~ div.sheet-body input[type='hidden'][value=''] + div.sheet-rows.sheet-grunt {
 		@extend %display-none;
 	}
@@ -193,7 +192,6 @@
 	input[name='attr_category']:not([value='Combat']) ~ label[data-i18n-title='dam']  {
 		@extend %display-none;
 	}
-
 
 	//- SHOW AND HIDE MATRIX DEVICE
 	input[name='attr_flag_matrix'][value='matrix'] ~ div.sheet-matrix {
